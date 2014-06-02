@@ -85,7 +85,7 @@ return array(
             ),
             array(
                 'type' => 'phpArray',
-                'base_dir' => __DIR__ . '/../language/',
+                'base_dir' => './module/Application/language/Zend_Validate/',
                 'pattern'  => '%s-Zend_Validate.php',
             ),
         ),
@@ -107,7 +107,6 @@ return array(
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
-            'partial/breadcrumbs'     => __DIR__ . '/../view/partial/breadcrumb.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
@@ -119,5 +118,18 @@ return array(
             'routes' => array(
             ),
         ),
+    ),
+    'doctrine'        => array(
+        'driver' => array(
+            'application_entity' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'paths' => __DIR__ . '/../src/' . __NAMESPACE__ . '/Entity',
+            ),
+            'orm_default'  => array(
+                'drivers' => array(
+                    __NAMESPACE__ . '\Entity' => 'application_entity',
+                )
+            )
+        )
     ),
 );

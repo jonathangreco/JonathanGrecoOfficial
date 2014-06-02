@@ -17,7 +17,7 @@ use ApplicationTest\Util\ServiceManagerFactory;
 
 class TestCase extends AbstractHttpControllerTestCase
 {
-	/**
+    /**
      * @var EntityManager
      */
     private $entityManager;
